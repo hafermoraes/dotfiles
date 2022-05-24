@@ -48,3 +48,20 @@
 ;(unpin! pinned-package another-pinned-package)
 ;; ...Or *all* packages (NOT RECOMMENDED; will likely break things)
 ;(unpin! t)
+
+(package! org-roam-bibtex
+  :recipe (:host github :repo "org-roam/org-roam-bibtex"))
+(package! org-roam
+  :recipe (:host github :repo "org-roam/org-roam"))
+(unpin! bibtex-completion helm-bibtex ivy-bibtex)
+(package! org-pdftools
+  :recipe (:host github :repo "fuxialexander/org-pdftools"))
+(package! ob-http
+  :recipe (:host github :repo "zweifisch/ob-http"))
+
+(package! org-ref
+  :recipe (:host github :repo "jkitchin/org-ref" :branch "org-ref-2"))
+(package! org-noter
+  :recipe (:host github :repo "weirdNox/org-noter"))
+(package! org-noter-pdftools
+  :recipe (:host github :repo "fuxialexander/org-pdftools"))
