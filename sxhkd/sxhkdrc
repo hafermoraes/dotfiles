@@ -1,0 +1,36 @@
+# Reload functions
+super + Escape
+	"$XDG_CONFIG_HOME"/sxhkd/functions
+
+# calculadora
+F9
+    gnome-calculator
+
+# navegadores
+# Google Chrome
+super + alt + c
+    google-chrome
+# Firefox
+super + alt + f
+    firefox
+# surf
+super + alt + s
+    surf
+
+# editores
+# emacs
+super + ctrl + e
+    emacs
+# nvim
+super + ctrl + n
+    nvim
+
+# volume
+XF86AudioRaiseVolume
+    pactl set-sink-volume 0 +5%
+
+XF86AudioLowerVolume
+    pactl set-sink-volume 0 -5%
+
+XF86AudioMute
+    pactl set-sink-mute 0 toggle
