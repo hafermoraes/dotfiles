@@ -10,7 +10,7 @@ redshift -c ~/.config/redshift/redshift.conf &
 emacs --daemon &
 
 # papel de parede
-nitrogen --restore &
+~/.config/wallpaper.sh &
 
 # daemon de atalhos do teclado
 sxhkd -c ~/.config/sxhkd/sxhkdrc &

@@ -8,7 +8,8 @@
 ** Linux Mint  
 
   #+begin_src shell
-  sudo apt install nitrogen                  # papel de parede
+  sudo apt install wget                      # downloads via terminal de comando
+  sudo apt install feh                       # papel de parede
   sudo apt install compton                   # compositor
   sudo apt install vim                       # editor vim
   sudo apt install scrot                     # captura de tela
@@ -18,6 +19,18 @@
   sudo apt install sxhkd                     # daemon de teclas de atalho
   #+end_src
 
+  #+begin_src shell :exports code :results silent
+  rm -rf ~/.config/wallpapers
+  wget https://wallpapercave.com/wp/wp7516604.jpg -P ~/.config/wallpapers
+  wget https://wallpapercave.com/wp/wp6899583.jpg -P ~/.config/wallpapers
+  wget https://wallpapercave.com/wp/wp2874390.jpg -P ~/.config/wallpapers
+  wget https://wallpapercave.com/wp/wp7516651.jpg -P ~/.config/wallpapers
+  wget https://wallpapercave.com/wp/wp6899759.jpg -P ~/.config/wallpapers
+  wget https://wallpapercave.com/wp/wp7516760.jpg -P ~/.config/wallpapers
+  wget https://wallpapercave.com/wp/wp6801416.jpg -P ~/.config/wallpapers
+  wget https://wallpapercave.com/wp/wp9183986.jpg -P ~/.config/wallpapers
+  chmod +x ~/.config/wallpapers.sh
+  #+end_src
 
 * DWM
   
