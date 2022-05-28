@@ -1,0 +1,97 @@
+
+* Instruções
+
+  Todos os arquivos e pastas deste repositório devem ser movidos para a pasta =~/.config/= para o correto funcionamento dos programas.
+
+* Dependências
+
+** Linux Mint  
+
+  #+begin_src shell
+  sudo apt install nitrogen                  # papel de parede
+  sudo apt install compton                   # compositor
+  sudo apt install vim                       # editor vim
+  sudo apt install scrot                     # captura de tela
+  sudo apt install libimlib2 libimlib2-dev   # usada no slock e scrot
+  sudo apt install lxappearance              # temas gtk sob o dwm
+  sudo apt install sxhkd                     # daemon de teclas de atalho
+  #+end_src
+
+
+* DWM
+  
+  #+begin_src shell :exports code :results silent
+  # DWM e patches
+  rm -rf dwm/
+  git clone https://git.suckless.org/dwm
+  wget https://dwm.suckless.org/patches/alpha/dwm-alpha-20201019-61bb8b2.diff -P dwm/patches
+  wget https://dwm.suckless.org/patches/fullgaps/dwm-fullgaps-toggle-20200830.diff -P dwm/patches
+  wget https://dwm.suckless.org/patches/pertag/dwm-pertag-20200914-61bb8b2.diff -P dwm/patches
+  wget https://dwm.suckless.org/patches/selfrestart/dwm-r1615-selfrestart.diff -P dwm/patches
+  wget https://dwm.suckless.org/patches/autostart/dwm-autostart-20161205-bb3bd6f.diff -P dwm/patches
+
+  #wget https://dwm.suckless.org/patches/systray/dwm-systray-6.3.diff -P dwm/patches  # correções manuais pequenas...
+  #wget https://dwm.suckless.org/patches/alpha/dwm-fixborders-6.2.diff -P dwm/patches # correções manuais pequenas...
+  #+end_src
+
+* SLSTATUS
+  
+  #+begin_src shell :exports code :results silent
+  # SLSTATUS
+  rm -rf slstatus/
+  git clone https://git.suckless.org/slstatus
+
+  # alternativas interessantes
+  # https://github.com/pystardust/sbar/blob/master/sbar
+  # https://eirenicon.org/dwm-tweaks-panel-desktop-status/
+  # https://eirenicon.org/knowledge-base/keybinding-conky/
+  #+end_src
+
+* DMENU
+  
+  #+begin_src shell :exports code :results silent
+  # DMENU e patches
+  rm -rf dmenu/
+  git clone https://git.suckless.org/dmenu
+  wget https://tools.suckless.org/dmenu/patches/border/dmenu-border-4.9.diff -P dmenu/patches
+  wget https://tools.suckless.org/dmenu/patches/fuzzymatch/dmenu-fuzzymatch-4.9.diff -P dmenu/patches
+  wget https://tools.suckless.org/dmenu/patches/grid/dmenu-grid-4.9.diff -P dmenu/patches
+  #wget https://tools.suckless.org/dmenu/patches/gridnav/dmenu-gridnav-5.0.diff -P dmenu/patches
+
+  #wget https://tools.suckless.org/dmenu/patches/password/dmenu-password-5.0.diff -P dmenu/patches
+  #wget https://tools.suckless.org/dmenu/patches/alpha/dmenu-alpha-20210605-1a13d04.diff -P dmenu/patches
+  #wget https://tools.suckless.org/dmenu/patches/center/dmenu-center-20200111-8cd37e1.diff -P dmenu/patches
+  #+end_src
+
+* ST
+  
+  #+begin_src shell :exports code :results silent
+  # ST e patches
+  rm -rf st/
+  git clone https://git.suckless.org/st
+  wget https://st.suckless.org/patches/alpha/st-alpha-0.4.1.diff -P st/patches
+  wget https://st.suckless.org/patches/scrollback/st-scrollback-0.8.5.diff -P st/patches
+  wget https://st.suckless.org/patches/anysize/st-anysize-0.8.1.diff -P st/patches
+  wget https://st.suckless.org/patches/nordtheme/st-nordtheme-0.8.2.diff -P st/patches
+  #+end_src
+  
+* SLOCK
+
+  #+begin_src shell :exports code :results silent
+  sudo apt install libimlib2 libimlib2-dev
+  #+end_src
+  
+  #+begin_src shell :exports code :results silent
+  # SLOCK e patches
+  rm -rf slock/
+  git clone https://git.suckless.org/slock
+  # patch dwm logo and blurscreen
+  wget https://tools.suckless.org/slock/patches/dwmlogoandblurscreen/slock-dwmlogoandblurscreen-1.0.diff -P slock/patches
+  cd slock; \
+	  patch -p1 < patches/slock-dwmlogoandblurscreen-1.0.diff; \
+	  cd ..; \
+	  make; \
+	  sudo make clean install
+  # auto timeout com erros...
+  # wget https://tools.suckless.org/slock/patches/auto-timeout/slock-auto-timeout.1.4.diff -P slock/patches
+  #+end_src

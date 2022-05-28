@@ -1,29 +1,37 @@
-# Reload functions
+# reinicia o daemon do sxhkd
 super + Escape
-	"$XDG_CONFIG_HOME"/sxhkd/functions
-
-# calculadora
-F9
-    gnome-calculator
+	pkill -USR1 -x sxhkd
 
 # navegadores
 # Google Chrome
-super + alt + c
+super + c
     google-chrome
 # Firefox
-super + alt + f
+super + f
     firefox
-# surf
-super + alt + s
-    surf
 
 # editores
 # emacs
-super + ctrl + e
-    emacs
-# nvim
-super + ctrl + n
-    nvim
+super + e
+    emacsclient -c -a "emacs"
+# vim
+super + v
+    st vim
+# RStudio
+super + r
+    rstudio
+
+# trava a tela
+super + l
+    slock
+
+# terminal (comando adicional ao alt + shift + <enter> do dwm
+super + Return
+    st 
+
+# captura de tela (fonte: https://github.com/GabrielTWMlinux/Scripts/blob/main/screenshot)
+super + shift + s
+    ~/.config/screenshot.sh
 
 # volume
 XF86AudioRaiseVolume
@@ -34,3 +42,11 @@ XF86AudioLowerVolume
 
 XF86AudioMute
     pactl set-sink-mute 0 toggle
+
+# brilho da tela
+# descubra o nome do monitor via: xrandr | grep ' connected' | awk '{print $1}'
+XF86MonBrightnessUp
+    ~/.config/brightness.sh + eDP-1
+
+XF86MonBrightnessDown
+    ~/.config/brightness.sh - eDP-1
