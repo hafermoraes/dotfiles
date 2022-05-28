@@ -12,6 +12,7 @@
   sudo apt install compton                   # compositor
   sudo apt install vim                       # editor vim
   sudo apt install scrot                     # captura de tela
+  sudo apt install redshift                  # ajuste automático de temperatura/brilho da tela ao longo do dia
   sudo apt install libimlib2 libimlib2-dev   # usada no slock e scrot
   sudo apt install lxappearance              # temas gtk sob o dwm
   sudo apt install sxhkd                     # daemon de teclas de atalho
