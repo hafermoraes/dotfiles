@@ -76,6 +76,7 @@
 ;; they are implemented.
 
 
+(setq tab-always-indent 'complete)
 
 ;; redimensionamento das janelas internas (fonte: https://www.emacswiki.org/emacs/WindowResize)
 (global-set-key (kbd "M-s-<left>") 'shrink-window-horizontally)
