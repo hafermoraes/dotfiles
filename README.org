@@ -1,7 +1,16 @@
 
 * Instruções
 
-  Todos os arquivos e pastas deste repositório devem ser movidos para a pasta =~/.config/= para o correto funcionamento dos programas.
+Todos os arquivos e pastas deste repositório devem ser movidos para a pasta =~/.config/= para o correto funcionamento dos programas.
+
+* .xinitrc
+
+O arquivo =.xinitrc= na pasta =~= deve ter o seguinte conteúdo:
+
+#+begin_example
+#!/usr/bin/bash
+exec dwm
+#+end_example
 
 * Dependências
 
@@ -38,10 +47,10 @@
   #+end_src
 
   e inclua a seguinte linha ao final do arquivo
+
   #+begin_example
   */5 * * * * DISPLAY=:0.0 /home/USER/.config/wallpaper.sh
   #+end_example
-
 
 * DWM
   
