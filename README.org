@@ -32,6 +32,17 @@
   chmod +x ~/.config/wallpapers.sh
   #+end_src
 
+  Para trocar o papel de parede a cada cinco minutos, use o =crontab=
+  #+begin_src shell :exports code :results silent
+  sudo crontab -e
+  #+end_src
+
+  e inclua a seguinte linha ao final do arquivo
+  #+begin_example
+  */5 * * * * DISPLAY=:0.0 /home/USER/.config/wallpaper.sh
+  #+end_example
+
+
 * DWM
   
   #+begin_src shell :exports code :results silent

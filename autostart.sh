@@ -10,7 +10,10 @@ redshift -c ~/.config/redshift/redshift.conf &
 emacs --daemon &
 
 # papel de parede
-~/.config/wallpaper.sh &
+feh --randomize --bg-fill ~/.config/wallpapers/* &
+
+# status bar
+xsetroot -name "$(date '+%d.%m.%Y (W%W)')"
 
 # daemon de atalhos do teclado
 sxhkd -c ~/.config/sxhkd/sxhkdrc &
