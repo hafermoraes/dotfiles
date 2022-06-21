@@ -19,3 +19,6 @@ sxhkd -c ~/.config/sxhkd/sxhkdrc &
 xset r rate 300 50 &
 xset s off &
 xset -dpms &
+
+# conky (atalhos do teclado)
+conky --config=$HOME/.config/conky/conky.conf &
