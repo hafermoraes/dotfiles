@@ -74,3 +74,128 @@
 ;;
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
+
+
+(setq tab-always-indent 'complete)
+
+;; redimensionamento das janelas internas (fonte: https://www.emacswiki.org/emacs/WindowResize)
+(global-set-key (kbd "M-s-<left>") 'shrink-window-horizontally)
+(global-set-key (kbd "M-s-<right>") 'enlarge-window-horizontally)
+(global-set-key (kbd "M-s-<up>") 'shrink-window)
+(global-set-key (kbd "M-s-<down>") 'enlarge-window)
+
+;; UTF-8 please
+(setq locale-coding-system 'utf-8) ; pretty
+(set-terminal-coding-system 'utf-8) ; pretty
+(set-keyboard-coding-system 'utf-8) ; pretty
+(set-selection-coding-system 'utf-8) ; please
+(prefer-coding-system 'utf-8) ; with sugar on top
+
+;; delete the region when typing, just like as we expect nowadays.
+(delete-selection-mode t)
+
+;; avisa se parênteses estão em número igual de abertura e fechamento
+(show-paren-mode t)
+
+(column-number-mode t)
+
+;; LaTeX
+;; https://tex.stackexchange.com/questions/275794/emacs-is-not-recognizing-files-as-latex-and-going-into-latex-mode
+(setq auto-mode-alist (cons '("\\.tex$" . latex-mode) auto-mode-alist)) 
+(setq LaTeX-indent-level 4) 
+(setq LaTeX-item-indent 2)
+
+;; Correção ortográfica
+(setq ispell-dictionary "brasileiro")
+;; easy spell check (fonte: https://www.emacswiki.org/emacs/FlySpell)
+(global-set-key (kbd "<f8>") 'ispell-word)
+(global-set-key (kbd "<f9>") 'ispell-region)
+
+;; ESS (Emacs Speaks Statistics)
+(setq ess-use-auto-complete t)
+(setq ess-ask-for-ess-directory nil)
+
+;; OrgMode
+(setq org-image-actual-width 550)
+(setq org-highlight-latex-and-related '(latex script entities))
+(setq org-hide-emphasis-markers t)
+(setq org-export-default-language "pt")
+(setq org-support-shift-select (quote always))
+
+;; Org Agenda
+(define-key global-map "\C-cl" 'org-store-link)
+(define-key global-map "\C-ca" 'org-agenda)
+(setq org-log-done t)
+(setq org-agenda-files '("~/gtd/agenda.org"   
+                         "~/gtd/archive.org"
+                         "~/gtd/delegate.org"
+                         "~/gtd/inbox.org"
+                         "~/gtd/incubate.org"
+                         "~/gtd/journal.org"
+                         "~/gtd/projects.org"
+                         "~/gtd/reference.org"
+                         "~/gtd/trash.org"
+))
+
+;; Org Noter
+(setq org_notes (concat (getenv "HOME") "/Dropbox/org/dok/")
+      org-directory org_notes
+      deft-directory org_notes
+      org-roam-directory org_notes
+)
+
+;; Org Babel
+(org-babel-do-load-languages
+   'org-babel-load-languages
+   '( (R . t)
+      (org . t)
+      (python . t)
+      (shell . t)
+      (http . t)
+      (sql . t)
+    )
+)
+(setq org-confirm-babel-evaluate nil
+      org-src-window-setup 'current-window
+      org-src-strip-leading-and-trailing-blank-lines t
+      org-src-preserve-indentation nil
+      org-edit-src-content-indentation 0   ;;https://emacs.stackexchange.com/a/51690
+      org-src-fontify-natively t
+      org-src-tab-acts-natively t
+)
+
+;; Org Capture (GTD)
+(define-key global-map (kbd "<f7>") 'org-capture)
+
+;; https://sachachua.com/blog/2015/02/learn-take-notes-efficiently-org-mode/
+(global-set-key (kbd "<f5>") (lambda () (interactive) (find-file "~/gtd/inbox.org")))
+
+(setq org-capture-templates '
+           (
+                  ("i"                ; key
+                   "Inbox"            ; description
+                   entry              ; type
+                   (file+headline "~/gtd/inbox.org" "inbox")       ; target
+                   "* TODO %^{Título}\n %^{Breve descritivo da tarefa} \n:PROPERTIES:\n\tCreated:%U \n:END: \n\n%?"  ; template
+                   ;;:prepend t        ; properties
+                   ;;:empty-lines 1    ; properties
+                   ;;:created t        ; properties
+                   )
+                   ("j"                ; key
+                    "journal"          ; description
+                    entry              ; type
+                    (file+datetree "~/gtd/journal.org") ; target
+                    "** %U - %^{atividade} :LOG: \n %^{descrição}\n"  ; template
+                   )
+           )
+)
+;; https://blog.aaronbieber.com/2017/03/19/organizing-notes-with-refle.html
+(setq org-refile-targets '((org-agenda-files :maxlevel . 3)))
+(setq org-refile-use-outline-path 'file)
+(setq org-refile-allow-creating-parent-nodes 'confirm) 
+
+;; pdftools
+;; automatically turns on midnight-mode for pdfs
+(add-hook 'pdf-view-mode-hook (lambda () (pdf-view-midnight-minor-mode))) 
+;; set the amber profile as default (see below)
+(setq pdf-view-midnight-colors '("light gray" . "gray14" )) 

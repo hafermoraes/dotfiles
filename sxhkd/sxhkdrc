@@ -2,13 +2,13 @@
 super + Escape
 	pkill -USR1 -x sxhkd
 
-# navegadores
-# Google Chrome
-super + c
+# navegador
+super + w
     google-chrome
-# Firefox
+
+# gerenciador de arquivos
 super + f
-    firefox
+    nemo
 
 # editores
 # emacs
@@ -29,6 +29,9 @@ super + l
 super + Return
     st 
 
+alt + shift + Return
+    st
+
 # captura de tela (fonte: https://github.com/GabrielTWMlinux/Scripts/blob/main/screenshot)
 super + shift + s
     ~/.config/screenshot.sh
@@ -46,7 +49,11 @@ XF86AudioMute
 # brilho da tela
 # descubra o nome do monitor via: xrandr | grep ' connected' | awk '{print $1}'
 XF86MonBrightnessUp
-    ~/.config/brightness.sh + eDP-1
+    ~/.config/brightness.sh +
 
 XF86MonBrightnessDown
-    ~/.config/brightness.sh - eDP-1
+    ~/.config/brightness.sh -
+
+# em desktops (sem teclas de iluminação como em notebooks)
+ctrl + super { Up, Down } 
+    ~/.config/brightness.sh {+, -}
