@@ -38,13 +38,13 @@ super + shift + s
 
 # volume
 XF86AudioRaiseVolume
-    pactl set-sink-volume 0 +5%
+    pactl set-sink-volume 0 +5% && pkill -RTMIN+11 dwmblocks
 
 XF86AudioLowerVolume
-    pactl set-sink-volume 0 -5%
+    pactl set-sink-volume 0 -5% && pkill -RTMIN+11 dwmblocks
 
 XF86AudioMute
-    pactl set-sink-mute 0 toggle
+    pactl set-sink-mute 0 toggle && pkill -RTMIN+11 dwmblocks
 
 # brilho da tela
 # descubra o nome do monitor via: xrandr | grep ' connected' | awk '{print $1}'

@@ -25,3 +25,6 @@ xset -dpms &
 
 # conky (atalhos do teclado)
 conky --config=$HOME/.config/conky/conky.conf &
+
+# dwmblocks
+dwmblocks &
