@@ -14,4 +14,4 @@ then
   updates+=$(syspatch -c | grep \/ | wc -l)  
 fi
 
-echo $updates
+echo -e $updates

@@ -10,13 +10,10 @@ redshift -c ~/.config/redshift/redshift.conf &
 emacs --daemon &
 
 # papel de parede
-feh --randomize --bg-fill ~/.config/wallpapers/* &
-
-# status bar
-xsetroot -name "$(date '+%d.%m.%Y (W%W)')"
+feh --randomize --bg-fill $HOME/.config/wallpapers/* &
 
 # daemon de atalhos do teclado
-sxhkd -c ~/.config/sxhkd/sxhkdrc &
+sxhkd -c $HOME/.config/sxhkd/sxhkdrc &
 
 # configs do Xorg
 xset r rate 300 50 &
@@ -27,4 +24,7 @@ xset -dpms &
 conky --config=$HOME/.config/conky/conky.conf &
 
 # dwmblocks
-dwmblocks &
+#dwmblocks &
+
+# slstatus
+slstatus &
