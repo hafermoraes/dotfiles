@@ -1,6 +1,6 @@
 #!/bin/bash
 
-vol=" "
+vol=""
 
 vol+=$(awk -F'[][]' '/dB/ {print $2 }' <(amixer sget Master))
 

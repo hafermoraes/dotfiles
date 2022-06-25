@@ -4,14 +4,13 @@
 compton --vsync opengl-swc --backend glx &
 
 # ajuste automático de temperatura e brilho da tela ao longo do dia
-redshift -c ~/.config/redshift/redshift.conf &
+redshift -c $HOME/.config/redshift/redshift.conf &
 
 # dropbox
 #dropbox start -i &
 
 # SSH-agent
-eval $(keychain --eval id_ed25519) &
-#eval $(ssh-agent -s) &
+eval $(ssh-agent -s) &
 
 # inicializa o servidor do emacs
 emacs --daemon &

@@ -35,10 +35,7 @@ alt + shift + Return
 
 # captura de tela (fonte: https://github.com/GabrielTWMlinux/Scripts/blob/main/screenshot)
 super + shift + s
-    ~/.config/screenshot.sh
-
-Print
-    ~/.config/screenshot.sh
+    $HOME/.config/scripts/screenshot.sh
 
 # volume
 XF86AudioRaiseVolume
@@ -53,11 +50,11 @@ XF86AudioMute
 # brilho da tela
 # descubra o nome do monitor via: xrandr | grep ' connected' | awk '{print $1}'
 XF86MonBrightnessUp
-    ~/.config/brightness.sh +
+    $HOME/.config/scripts/brightness.sh +
 
 XF86MonBrightnessDown
-    ~/.config/brightness.sh -
+    $HOME/.config/scripts/brightness.sh -
 
 # em desktops (sem teclas de iluminação como em notebooks)
 ctrl + super { Up, Down } 
-    ~/.config/brightness.sh {+, -}
+    $HOME/.config/scripts/brightness.sh {+, -}

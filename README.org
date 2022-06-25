@@ -26,6 +26,9 @@ exec dwm
   sudo apt install libimlib2 libimlib2-dev   # usada no slock e scrot
   sudo apt install lxappearance              # temas gtk sob o dwm
   sudo apt install sxhkd                     # daemon de teclas de atalho
+  sudo apt install pass                      # gerenciador de senhas
+  sudo apt install alsa                      # som
+  sudo apt install keychain openssh          # ssh-agent
   #+end_src
 
   #+begin_src shell :exports code :results silent
@@ -80,6 +83,17 @@ exec dwm
   # https://eirenicon.org/dwm-tweaks-panel-desktop-status/
   # https://eirenicon.org/knowledge-base/keybinding-conky/
   #+end_src
+
+* DWMBLOCKS
+
+  #+begin_src shell :exports code :results silent
+  # SLSTATUS
+  rm -rf dwmblocks/
+  git clone https://github.com/torrinfail/dwmblocks.git
+
+  # configuração própria (substituir config.def.h original pelo seguinte)
+  # https://github.com/hafermoraes/dotfiles/blob/master/dwmblocks/blocks.def.h
+  #+end_src  
 
 * DMENU
   
