@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # compositor
-compton --vsync opengl-swc --backend glx &
+# compton --vsync opengl-swc --backend glx &
 
 # ajuste automático de temperatura e brilho da tela ao longo do dia
 redshift -c $HOME/.config/redshift/redshift.conf &
