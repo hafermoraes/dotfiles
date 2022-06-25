@@ -68,13 +68,13 @@ static const struct arg args[] = {
   // atualizacoes de seguranca
   //{ run_command,    "  %s |", "apt list --upgradable 2>/dev/null | grep / | wc -l" },
   // volume
-  { run_command,    "  %4s |", "amixer sget Master | awk -F\"[][]\" '/%/ { print $2 }' | head -n1" },
+  { run_command,    "  %4s ", "amixer sget Master | awk -F\"[][]\" '/%/ { print $2 }' | head -n1" },
   // WIFI
-  { wifi_perc,      "   %s%% |",        "wlo1" },
+  { wifi_perc,      "   %s%% ",        "wlo1" },
   // Bateria
-  { battery_perc,   "  %s%% |" , "BAT0" },
+  { battery_perc,   "  %s%% |" , "BAT0" },
   // CPU
-  { cpu_perc,       " cpu %s%% |",  NULL },
+  { cpu_perc,       " cpu %s%% ",  NULL },
   // Memória RAM
   //{ ram_perc,       "  %s%% |",  NULL },
   { run_command,    " ram %s%% |", "free | awk  '(NR==2){printf (\"%.0f\", $3/$2*100)}'" },        

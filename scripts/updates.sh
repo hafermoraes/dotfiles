@@ -1,6 +1,7 @@
 #!/bin/bash
 
-updates=" "
+#updates=" "
+updates=" "
 
 # Linux Mint
 if [ $(uname -a | grep -i ubuntu | wc -l) -gt 0 ]

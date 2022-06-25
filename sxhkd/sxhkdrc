@@ -10,13 +10,14 @@ super + w
 super + f
     nemo
 
+# vlc
+super + v
+    vlc
+
 # editores
 # emacs
 super + e
     emacsclient -c -a "emacs"
-# vim
-super + v
-    st vim
 # RStudio
 super + r
     rstudio
@@ -34,6 +35,9 @@ alt + shift + Return
 
 # captura de tela (fonte: https://github.com/GabrielTWMlinux/Scripts/blob/main/screenshot)
 super + shift + s
+    ~/.config/screenshot.sh
+
+Print
     ~/.config/screenshot.sh
 
 # volume

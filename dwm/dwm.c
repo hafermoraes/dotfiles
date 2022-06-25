@@ -1440,8 +1440,8 @@ void
 runAutostart(void) {
 	//system("cd ~/.dwm; ./autostart_blocking.sh");
 	//system("cd ~/.dwm; ./autostart.sh &");
-	system("cd ~/.config; ./autostart_blocking.sh");
-	system("cd ~/.config; ./autostart.sh &");
+	system("$HOME/.config/autostart_blocking.sh");
+	system("$HOME/.config/autostart.sh &");
 }
 
 void
