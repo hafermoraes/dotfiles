@@ -7,7 +7,7 @@
 redshift -c $HOME/.config/redshift/redshift.conf &
 
 # dropbox
-#dropbox start -i &
+dropbox start -i &
 
 # SSH-agent
 eval $(ssh-agent -s) &
