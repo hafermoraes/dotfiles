@@ -2,9 +2,9 @@
 super + Escape
 	pkill -USR1 -x sxhkd
 
-# navegador
-super + w
-    google-chrome
+# navegadores
+super + w ; {c,f,b}
+    {google-chrome, firefox, brave-browser --incognito}
 
 # gerenciador de arquivos
 super + f
@@ -15,12 +15,8 @@ super + v
     vlc
 
 # editores
-# emacs
-super + e
-    emacsclient -c -a "emacs"
-# RStudio
-super + r
-    rstudio
+super + e ; {e, n, v, r}
+    {emacsclient -c -a "emacs", st nvim, st vim, rstudio}
 
 # trava a tela
 super + l
@@ -29,9 +25,6 @@ super + l
 # terminal (comando adicional ao alt + shift + <enter> do dwm
 super + Return
     st 
-
-alt + shift + Return
-    st
 
 # captura de tela (fonte: https://github.com/GabrielTWMlinux/Scripts/blob/main/screenshot)
 super + shift + s
