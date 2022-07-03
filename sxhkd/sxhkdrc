@@ -6,6 +6,10 @@ super + Escape
 super + w ; {c,f,b}
     {google-chrome, firefox, brave-browser --incognito}
 
+# gerenciador de senhas
+super + p
+    $HOME/.config/scripts/passmenu.sh
+
 # gerenciador de arquivos
 super + f
     nemo
