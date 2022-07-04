@@ -47,11 +47,11 @@ XF86AudioMute
 # brilho da tela
 # descubra o nome do monitor via: xrandr | grep ' connected' | awk '{print $1}'
 XF86MonBrightnessUp
-    $HOME/.config/scripts/brightness.sh +
+    $HOME/.config/scripts/brightness.sh + && pkill -RTMIN+12 dwmblocks
 
 XF86MonBrightnessDown
-    $HOME/.config/scripts/brightness.sh -
+    $HOME/.config/scripts/brightness.sh - && pkill -RTMIN+12 dwmblocks
 
 # em desktops (sem teclas de iluminação como em notebooks)
 ctrl + super { Up, Down } 
-    $HOME/.config/scripts/brightness.sh {+, -}
+    $HOME/.config/scripts/brightness.sh {+, -} && pkill -RTMIN+12 dwmblocks
