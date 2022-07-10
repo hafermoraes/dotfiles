@@ -18,7 +18,7 @@ static const Block blocks[] = {
   // previsão do tempo (atualiza a cada 1 hora)
   {"", "$HOME/.config/scripts/weather.sh",                            3600,                 0               },
   // data (semana do ano) dd.mm.YYYY, HH:MM, atualizado a cada minuto
-  {"", "date '+(W%V) %Y-%m-%d %H:%M'",                                60,                   0               },
+  {"", "$HOME/.config/scripts/datetime.sh",                           60,                   0               },
 };
 
 //sets delimeter between status commands. NULL character ('\0') means no delimeter.
