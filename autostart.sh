@@ -1,13 +1,13 @@
 #!/bin/bash
 
 # compositor
-# compton --vsync opengl-swc --backend glx &
+compton --vsync opengl-swc --backend glx --config=$HOME/.config/compton.conf &
 
 # ajuste automático de temperatura e brilho da tela ao longo do dia
 redshift -c $HOME/.config/redshift/redshift.conf &
 
 # dropbox
-# dropbox start -i &
+dropbox start -i &
 
 # SSH persistente na sessão
 eval $(keychain --eval id_ed25519) &

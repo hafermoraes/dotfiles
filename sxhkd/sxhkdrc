@@ -7,11 +7,11 @@ super + w ; {c,f,b}
     {google-chrome, firefox, brave-browser --incognito}
 
 # gerenciador de senhas
-super + p
+super + shift + p
     $HOME/.config/scripts/passmenu.sh
 
 # gerenciador de arquivos
-super + f
+super + shift + f
     nemo
 
 # vlc
@@ -23,12 +23,12 @@ super + e ; {e, n, v, r}
     {emacsclient -c -a "emacs", st nvim, st vim, rstudio}
 
 # trava a tela
-super + l
+super + shift + l
     slock
 
 # terminal (comando adicional ao alt + shift + <enter> do dwm
-super + Return
-    st 
+#super + Return
+#    st 
 
 # captura de tela (fonte: https://github.com/GabrielTWMlinux/Scripts/blob/main/screenshot)
 super + shift + s
