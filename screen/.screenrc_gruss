@@ -1,0 +1,14 @@
+
+source $HOME/.screenrc
+
+# layouts
+layout new gruss
+chdir ~/
+screen -t "calendar" 1
+stuff "cal 2024\015"
+split -v
+focus right
+chdir ~/
+screen -t "processes" 2
+stuff "htop\015"
+focus left
