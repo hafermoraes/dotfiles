@@ -28,6 +28,7 @@ exec dwm
   sudo apt install sxhkd                     # daemon de teclas de atalho
   sudo apt install pass                      # gerenciador de senhas
   sudo apt install alsa                      # som
+  sudo apt install screen                    # gnu screen (terminal multiplexer)
   sudo apt install keychain openssh          # ssh-agent
   #+end_src
 
