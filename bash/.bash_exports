@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+# editor configs
+export ALTERNATE_EDITOR=""
+export EDITOR="emacsclient -t"
+export VISUAL="emacsclient -c -a emacs"
+
+# Add `~/bin` to the `$PATH`
+export PATH="$HOME/bin:$PATH";
+
+# hack to gnu screen crash (https://savannah.gnu.org/bugs/?58132)
+export TERM=xterm-256color
+
+# pyenv configs
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"

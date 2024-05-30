@@ -1,5 +1,3 @@
-# Add `~/bin` to the `$PATH`
-export PATH="$HOME/bin:$PATH";
 
 # setting TERM to xterm-256color and circumvent gnu screen crash
 # https://savannah.gnu.org/bugs/?58132
