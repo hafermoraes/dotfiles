@@ -1,0 +1,6 @@
+
+Correção do bug de emojis no st
+
+https://www.maximilian-schillinger.de/articles/st-libxft-bgra-patch.html
+
+
