@@ -6,7 +6,7 @@ static const Block blocks[] = {
   // volume https://unix.stackexchange.com/a/89583
   {"", "$HOME/.config/scripts/volume.sh",                             0,                    11              },
   // iluminação do monitor
-  {"", "$HOME/.config/scripts/brightness.sh",                         0,                    12              },
+  //{"", "$HOME/.config/scripts/brightness.sh",                         0,                    12              },
   // sinal do wifi (atualiza a cada 5 segundos)
   {"", "$HOME/.config/scripts/wifi.sh",                               5,                    0               },
   // bateria (atualiza a cada 2 minutos)

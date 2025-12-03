@@ -10,6 +10,11 @@ super + w ; {c,f,b}
 super + shift + p
     $HOME/.config/scripts/passmenu.sh
 
+# escolha de monitores
+super + shift + m
+    $HOME/.config/scripts/monitors.sh
+
+
 # gerenciador de arquivos
 super + shift + f
     nemo
