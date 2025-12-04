@@ -10,7 +10,7 @@ redshift -c $HOME/.config/redshift/redshift.conf &
 dropbox start -i &
 
 # SSH persistente na sessão
-# eval $(keychain --eval id_ed25519) &
+# eval $(keychain --eval --agents ssh id_ed25519) &
 eval `keychain --eval --agents ssh id_ed25519` &
 
 # inicializa o servidor do emacs
